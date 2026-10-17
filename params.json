@@ -1,0 +1,23 @@
+{
+  "_说明": "改完这里后运行：python generate.py —— 会重新生成 clash-sub.yaml",
+  "_说明_protocol": "可填 vless / vmess / trojan（默认 vless over WS + TLS）",
+  "_说明_uuid": "vless / vmess 必填：节点 UUID，格式 8-4-4-4-12",
+  "_说明_password": "trojan 必填：节点密码",
+  "_说明_sni": "TLS 的 servername / 伪装域名（同时作为 WS 的 Host，除非单独填 host）",
+  "_说明_host": "可选：WS 的 Host 头，留空则用 sni",
+  "_说明_ws_path": "可选：WS 路径，默认 /",
+  "_说明_use_ipv6": "true 时用清单里的 IPv6 地址当 server（默认用第一列 IPv4 端点）",
+  "_说明_name_prefix": "可选：节点名前缀",
+  "protocol": "vless",
+  "uuid": "REPLACE_WITH_YOUR_UUID",
+  "password": "REPLACE_WITH_YOUR_PASSWORD",
+  "sni": "REPLACE_WITH_YOUR_DOMAIN",
+  "host": "",
+  "ws_path": "/",
+  "tls": true,
+  "udp": true,
+  "skip_cert_verify": false,
+  "use_ipv6": false,
+  "client_fingerprint": "chrome",
+  "name_prefix": ""
+}
