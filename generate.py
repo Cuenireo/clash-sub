@@ -116,8 +116,8 @@ def parse_endpoints() -> list[dict]:
 
 
 def write_csv(rows: list[dict]) -> None:
-    with CSV_OUT.open("w", encoding="utf-8", newline="") as fh:
-        writer = csv.DictWriter(fh, fieldnames=CSV_HEADER)
+    with CSV_OUT.open("w", encoding="utf-8", newline="\n") as fh:
+        writer = csv.DictWriter(fh, fieldnames=CSV_HEADER, lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 
@@ -338,7 +338,8 @@ def dump_yaml(result: dict) -> None:
         width=4096,
     )
     banner = "\n".join(result["header"]) + "\n\n"
-    YAML_OUT.write_text(banner + text, encoding="utf-8")
+    with YAML_OUT.open("w", encoding="utf-8", newline="\n") as fh:
+        fh.write(banner + text)
 
 
 def main() -> None:
